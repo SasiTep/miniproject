@@ -1,4 +1,4 @@
-# Getting Started with Create App
+# SASITHON MINI PROJECT
 Install node_modules
 
 Install Package
@@ -9,4 +9,4 @@ In the project directory, you can run:
 
 ### `npm run start`
 
-**Note:  WEB CRUD  CREATE  READ  UPDATE  DELETE !**
+** WEB CRUD  CREATE  READ  UPDATE  DELETE !**
