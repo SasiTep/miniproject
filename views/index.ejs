@@ -1,0 +1,44 @@
+<% include partials/header.ejs %>
+    <div class="table-wrapper">
+        <% if (news_feed.length > 0) { %>
+            <table class="table table-hovered">
+                <thead class="bg-mynav">
+                    <tr>
+                        <th scope="col" class="text-mynav">ID</th>
+                        <th scope="col" class="text-mynav">Image</th>
+                        <th scope="col" class="text-mynav">title</th>
+                        <th scope="col" class="text-mynav">description</th>
+                        <th scope="col" class="text-mynav">url</th>
+                        <th scope="col" class="text-mynav">datestamp</th>
+                        <th scope="col" class="text-mynav">Username</th>
+                        <th scope="col" class="text-mynav"></th>
+                        <th scope="col" class="text-mynav"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% news_feed.forEach((player, index) => { %>
+                        <tr>
+                            <th scope="row"><%= player.id %></th>
+                            <td><img src="/assets/img/<%= player.imageUrl %>" class=" player-img" alt=""></td>
+                            <td><%= player.title %></td>
+                            <td><%= player.description %></td>
+                            <td><%= player.url %></td>
+                            <td><%= player.datestamp %></td>
+                            <td>@<%= player.user_name %></td>
+                            <td>
+                                <a href="player/edit/<%= player.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Edit</a>
+                            </td>
+                            <td>
+                                <a href="player/delete/<%= player.id %>" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p class="text-center">No news_feed found. Go <a href="/player/add" >here</a> to add news_feed.</p>
+        <% } %>
+    </div>
+</div>
+</body>
+</html>
